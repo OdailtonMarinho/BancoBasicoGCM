@@ -1,8 +1,8 @@
 <?php
 	class Agencia
 	{
-		$nome;
-		$numero_agencia;
-		$endereco;
+		private $nome;
+		private $numero_agencia;
+		private $endereco;
 	}
 ?>
