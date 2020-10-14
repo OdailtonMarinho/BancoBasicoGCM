@@ -1,12 +1,12 @@
 <?php
 	class SaveData
 	{
-		public static function write_conta($conta)
+		public static function write_conta($nome, $numero_conta, $agencia)
 		{
-			$str_data = '{"nome":$conta->nome,"numero_conta":"$conta->$numero_conta","agencia":$conta->$agencia}';
+			$str_data = '{nome:'.$nome.',numero_conta:'.$numero_conta.',agencia:'.$agencia.'}';
 
 			$file = fopen('DataBase.json', 'w');
-			$fwrite($file, $str_data);
+			fwrite($file, $str_data);
 		}
 	}
 ?>
