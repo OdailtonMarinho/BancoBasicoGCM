@@ -10,8 +10,6 @@
 			fwrite($file, $str_data.PHP_EOL);
 
 			fclose($file);
-
-			var_dump($str_data);
 		}
 
 		public static function get_conta($numero_conta)
