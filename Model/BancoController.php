@@ -14,9 +14,9 @@
 			$comandos_size = 0;
 		}
 
-		public executar_comandos()
+		public function executar_comandos()
 		{
-			for ($i = 0; i < $comandos_size; i++)
+			for ($i = 0; $i < $comandos_size; $i++)
 			{
 				$comando[$i]->execute();
 				unset($comando);
