@@ -46,16 +46,23 @@
 
 		public function transferencia($beneficiario_n_conta, $valor)
 		{
-			if($this->debito($valor) == false) return false;
+			if ($valor > $this->saldo) return false;
+			else if ($valor < 0) return false;
+
+			$this->saldo -= $valor;
 
 			$c = SaveData::get_conta($beneficiario_n_conta);
 			$d = new Conta($c->nome, $c->cpf, $c->numero_conta, $c->saldo, $c->agencia);
 			$beneficiario = $d;
-			if(SaveData::get_conta($beneficiario_n_conta)) return false;
 
-			$beneficiario->saldo += valor;
+			if(SaveData::get_conta($beneficiario_n_conta) == false) return false;
+			var_dump($beneficiario->saldo);
+			var_dump($this->saldo);
+
+			$beneficiario->saldo += $valor;
 
 			SaveData::change_saldo($beneficiario->numero_conta, $beneficiario->saldo);
+			SaveData::change_saldo($this->numero_conta, $this->saldo);
 
 			return true;
 		}
