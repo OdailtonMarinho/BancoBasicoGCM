@@ -1,15 +1,17 @@
 <?php
 	include 'Conta.php';
-	include 'Agencia';
+	include 'Agencia.php';
 
-	interface ICommand
+	abstract class ICommand
 	{
-		protected $conta;
-		public __construct($_conta)
+		/*protected $conta;
+		public function __construct($_conta)
 		{
-			$conta = $_conta
+			$this->conta = $_conta;
 		}
 
-		public function execute();
+		protected function get_conta() { return $this->conta; }*/
+
+		public function execute() {  }
 	}
 ?>
