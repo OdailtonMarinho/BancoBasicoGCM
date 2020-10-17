@@ -1,5 +1,5 @@
 <?php
-	class Saldo extends ICommand
+	class Saldo implements ICommand
 	{
 		protected $conta;
 		public function __construct($_n_conta)

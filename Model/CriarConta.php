@@ -1,5 +1,5 @@
 <?php
-	class CriarConta extends ICommand
+	class CriarConta implements ICommand
 	{
 		protected $conta;
 		public function __construct($_nome, $_cpf, $_numero_conta, $_saldo_inicial, $_agencia)

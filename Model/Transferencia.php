@@ -1,5 +1,5 @@
 <?php
-	class Transferencia extends ICommand
+	class Transferencia implements ICommand
 	{
 		protected $beneficiario;
 		protected $valor;

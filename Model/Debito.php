@@ -1,12 +1,11 @@
 <?php
-	class Debito extends ICommand
+	class Debito implements ICommand
 	{
 		protected $valor;
 		protected $conta;
 
 		public function __construct($_numero_conta, $_valor)
 		{
-			//parent::__construct($_conta);
 			if(SaveData::get_conta($_numero_conta) == false) return false;
 			$c = SaveData::get_conta($_numero_conta);
 			$d = new Conta($c->nome, $c->cpf, $c->numero_conta, $c->saldo, $c->agencia);
