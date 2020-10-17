@@ -1,6 +1,5 @@
 <?php
 	include 'Conta.php';
-	include 'Agencia.php';
 
 	abstract class ICommand
 	{

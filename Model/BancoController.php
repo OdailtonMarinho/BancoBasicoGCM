@@ -3,6 +3,7 @@
 	include 'Transferencia.php';
 	include 'Debito.php';
 	include 'Saldo.php';
+	include 'CriarConta.php';
 
 	class BancoController
 	{

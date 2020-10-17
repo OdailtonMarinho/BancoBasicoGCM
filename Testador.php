@@ -3,10 +3,10 @@
 
 
 
-	$conta1 = new Conta('cliente', '123456789', '14785-8', 150, '456-8');
-	$conta2 = new Conta('usuario', '555555555', '252525', 5000, '555-5');
-	$conta1->criar_conta();
-	$conta2->criar_conta();
+	$conta1 = new CriarConta('cliente', '123456789', '14785-8', 150, '456-8');
+	$conta2 = new CriarConta('usuario', '555555555', '252525', 5000, '555-5');
+	$conta1->execute();
+	$conta2->execute();
 
 	echo 'Adicionadas duas contas ao DataBase. </br>';
 
