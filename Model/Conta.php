@@ -3,11 +3,11 @@
 
 	class Conta
 	{
-		private $numero_conta;
-		private $saldo;
-		private $agencia;
-		private $nome;
-		private $cpf;
+		public $numero_conta;
+		public $saldo;
+		public $agencia;
+		public $nome;
+		public $cpf;
 
 		public function __construct($_nome='', $_cpf='', $_numero_conta='', $_saldo_inicial='', $_agencia='')
 		{
@@ -38,6 +38,7 @@
 			if ($valor > $this->saldo) return false;
 			else if ($valor < 0) return false;
 
+			$this->saldo = (double)$this->saldo;
 			$this->saldo -= $valor;
 			SaveData::change_saldo($this->numero_conta, $this->saldo);
 
@@ -49,16 +50,18 @@
 			if ($valor > $this->saldo) return false;
 			else if ($valor < 0) return false;
 
+			$this->saldo = (double)$this->saldo;
 			$this->saldo -= $valor;
 
 			$c = SaveData::get_conta($beneficiario_n_conta);
+			var_dump($c->numero_conta);
 			$d = new Conta($c->nome, $c->cpf, $c->numero_conta, $c->saldo, $c->agencia);
 			$beneficiario = $d;
 
 			if(SaveData::get_conta($beneficiario_n_conta) == false) return false;
-			var_dump($beneficiario->saldo);
 			var_dump($this->saldo);
 
+			$beneficiario->saldo = (double)$beneficiario->saldo;
 			$beneficiario->saldo += $valor;
 
 			SaveData::change_saldo($beneficiario->numero_conta, $beneficiario->saldo);

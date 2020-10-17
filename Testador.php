@@ -1,11 +1,7 @@
 <?php
 	include './Model/BancoController.php';
 
-	echo 'Esvaziando o DataBase para realizar os testes... </br>';
 
-	$file = fopen('./DataBase.json', 'w');
-	fwrite($file, '');
-	fclose($file);
 
 	$conta1 = new Conta('cliente', '123456789', '14785-8', 150, '456-8');
 	$conta2 = new Conta('usuario', '555555555', '252525', 5000, '555-5');
@@ -26,6 +22,21 @@
 	echo 'Realizando Transferencia de 50 reais da conta(14785-8) para a conta(252525): </br>';
 	$transf = new Transferencia('14785-8', '252525', 50);
 	$transf->execute();
+
+	$t2 = new Transferencia('121212', '55485', 67);
+	if($t2->execute() == false) echo 'faiô transferência </br>';
+
+	$d2 = new Debito('124578', 66);
+	if($d2->execute() == false) echo 'faiô debito </br>';
+
+	$d3 = new Debito('252525', -50);
+	if($d3->execute() == false) echo 'faiô debito </br>';
+
+	$d3 = new Debito('14785-8', 100000);
+	if($d3->execute() == false) echo 'faiô debito </br>';
+
+	$s = new Saldo('adfasdsa');
+	if($s->execute() == false) echo 'faiô saldo </br>';
 
 
 ?>
