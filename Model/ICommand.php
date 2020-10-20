@@ -1,5 +1,5 @@
 <?php
-	include 'Conta.php';
+	include '../Model/Conta.php';
 
 	interface ICommand
 	{
