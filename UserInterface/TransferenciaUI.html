@@ -16,14 +16,14 @@
       <div id="logo">
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="mainPage.html">Banco<span class="logo_colour"> Básico</span></a></h1>
+          <h1><a href="index.html">Banco<span class="logo_colour"> Básico</span></a></h1>
           <h2>Simple. Contemporary.</h2>
         </div>
       </div>
       <div id="menubar">
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li><a href="mainPage.html">Conta</a></li>
+          <li><a href="index.html">Conta</a></li>
           <li><a href="DebitoUI.html">Débito</a></li>
           <li class="selected"><a href="TransferenciaUI.html">Transferência</a></li>
         </ul>
@@ -41,10 +41,12 @@
         <h1>Transferência: </h1>
         <form action="/CriarContaUI.php" method="post">
             <ul>
+              <li><label for="benef">NºConta Transferente:</label></li>
+            <input type="text" id="transferente" name="transferente"><br><br>
             <li><label for="benef">NºConta Beneficiário:</label></li>
             <input type="text" id="benef" name="benef"><br><br>
             <li><label for="valor">Valor:</label></li>
-            <input type="text" id="valor" name="valor"><br><br>
+            <input type="number" id="valor" name="valor" min="1" max="50000" value="10"><br><br>
             <input type="submit" value="Transferir">
           </ul>
         </form>
