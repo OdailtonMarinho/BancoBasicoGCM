@@ -25,11 +25,6 @@
 
 		public function ver_saldo()
 		{
-			/*$nc = SaveData::get_conta($this->numero_conta);
-			if($nc == false) return false;
-
-			return $nc->saldo;*/
-
 			return $this->saldo;
 		}
 
@@ -54,12 +49,10 @@
 			$this->saldo -= $valor;
 
 			$c = SaveData::get_conta($beneficiario_n_conta);
-			var_dump($c->numero_conta);
 			$d = new Conta($c->nome, $c->cpf, $c->numero_conta, $c->saldo, $c->agencia);
 			$beneficiario = $d;
 
 			if(SaveData::get_conta($beneficiario_n_conta) == false) return false;
-			var_dump($this->saldo);
 
 			$beneficiario->saldo = (double)$beneficiario->saldo;
 			$beneficiario->saldo += $valor;
