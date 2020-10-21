@@ -13,7 +13,7 @@
 
 			fclose($file);*/
 
-			$files = scandir($this->data_base_dir);
+			$files = scandir('../DataBase/Contas');
 
 			$nova_conta_data = fopen('../DataBase/Contas/'.$numero_conta, 'w');
 			fwrite($nova_conta_data, $nome.' ');
