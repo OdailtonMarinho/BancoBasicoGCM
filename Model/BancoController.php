@@ -1,9 +1,9 @@
 <?php
-	include 'ICommand.php';
-	include 'Transferencia.php';
-	include 'Debito.php';
-	include 'Saldo.php';
-	include 'CriarConta.php';
+	include '../Model/ICommand.php';
+	include '../Model/Transferencia.php';
+	include '../Model/Debito.php';
+	include '../Model/Saldo.php';
+	include '../Model/CriarConta.php';
 
 	class BancoController
 	{

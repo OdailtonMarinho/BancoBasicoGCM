@@ -1,6 +1,8 @@
 <?php
 	class SaveData
 	{
+		//protected $data_base_dir = '../DataBase/Contas';
+
 		public static function write_conta($nome, $cpf, $numero_conta, $saldo, $agencia)
 		{
 			/*$data = array('nome'=>$nome, 'cpf'=>$cpf, 'numero_conta'=>$numero_conta, 'saldo'=>$saldo, 'agencia'=>$agencia);
@@ -11,9 +13,9 @@
 
 			fclose($file);*/
 
-			$files = scandir('./DataBase/Contas');
+			$files = scandir('../DataBase/Contas');
 
-			$nova_conta_data = fopen('./DataBase/Contas/'.$numero_conta, 'w');
+			$nova_conta_data = fopen('../DataBase/Contas/'.$numero_conta, 'w');
 			fwrite($nova_conta_data, $nome.' ');
 			fwrite($nova_conta_data, $cpf.' ');
 			fwrite($nova_conta_data, $numero_conta.' ');
@@ -23,13 +25,13 @@
 
 		public static function get_conta($numero_conta)
 		{
-			$contas = scandir('./DataBase/Contas');
+			$contas = scandir('../DataBase/Contas');
 
 			foreach($contas as $conta)
 			{
 				if($conta == $numero_conta) 
 				{
-					$d = file('./DataBase/Contas/'.$conta);
+					$d = file('../DataBase/Contas/'.$conta);
 					$c = explode(" ", $d[0]);
 					/*$c[0] = str_replace("", PHP_EOL, $c[0]);
 					$c[1] = str_replace("", PHP_EOL, $c[1]);
@@ -57,15 +59,15 @@
 
 		public static function change_saldo($numero_conta, $novo_valor)
 		{
-			$contas = scandir('./DataBase/Contas');
+			$contas = scandir('../DataBase/Contas');
 			foreach($contas as $conta)
 			{
 				if ($conta == $numero_conta)
 				{
-					$d = file('./DataBase/Contas/'.$conta);
+					$d = file('../DataBase/Contas/'.$conta);
 					$c = explode(' ', $d[0]);
 
-					$c_file = fopen('./DataBase/Contas/'.$conta, 'w');
+					$c_file = fopen('../DataBase/Contas/'.$conta, 'w');
 					fwrite($c_file, $c[0].' ');
 					fwrite($c_file, $c[1].' ');
 					fwrite($c_file, $c[2].' ');

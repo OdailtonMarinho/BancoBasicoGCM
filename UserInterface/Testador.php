@@ -1,5 +1,5 @@
 <?php
-	include './Model/BancoController.php';
+	include '../Model/BancoController.php';
 
 
 

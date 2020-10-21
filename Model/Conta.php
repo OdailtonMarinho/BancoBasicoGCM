@@ -1,5 +1,5 @@
 <?php
-	include './DataBase/SaveData.php';
+	include '../DataBase/SaveData.php';
 
 	class Conta
 	{
