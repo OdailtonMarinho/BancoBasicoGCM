@@ -4,8 +4,11 @@
 	$saldo_command = new Saldo($_POST['n_conta']);
 	$saldo = $saldo_command->execute();
 
-	if($saldo == false) echo 'Um erro ocorreu, confira se o número de conta inserido é válido.';
+	$ver_cred_command = new VerCredito($_POST['n_conta']);
+	$credito = $ver_cred_command->execute();
 
-	else echo 'A conta ' . $_POST["n_conta"] . ' tem o Saldo de: ' . $saldo . '$';
+	if($saldo == false || $credito == false) echo 'Um erro ocorreu, confira se o número de conta inserido é válido.';
+
+	else echo 'A conta ' . $_POST["n_conta"] . ' tem o Saldo de: ' . $saldo . '$ e Crédito de: ' . $credito;
 
 ?>

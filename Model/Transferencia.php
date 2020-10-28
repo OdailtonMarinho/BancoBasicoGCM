@@ -8,7 +8,7 @@
 		{
 			if (SaveData::get_conta($_numero_conta) == false) return false;
 			$c = SaveData::get_conta($_numero_conta);
-			$d = new Conta($c->nome, $c->cpf, $c->numero_conta, $c->saldo, $c->agencia);
+			$d = new Conta($c->nome, $c->cpf, $c->numero_conta, $c->saldo, $c->credito, $c->agencia);
 			$this->conta = $d;
 			$this->beneficiario = $_beneficiario;
 			$this->valor = $_valor;

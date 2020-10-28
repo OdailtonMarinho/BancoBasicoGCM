@@ -1,23 +1,22 @@
 <?php
-	class Debito implements ICommand
+	class RetirarCredito implements ICommand
 	{
-		protected $valor;
 		protected $conta;
-
+		protected $valor;
 		public function __construct($_numero_conta, $_valor)
 		{
-			if(SaveData::get_conta($_numero_conta) == false) return false;
+			if (SaveData::get_conta($_numero_conta) == false) return false;
 			$c = SaveData::get_conta($_numero_conta);
 			$d = new Conta($c->nome, $c->cpf, $c->numero_conta, $c->saldo, $c->credito, $c->agencia);
 			$this->conta = $d;
-			$this->valor = (double)$_valor;
-		} 
+			$this->valor = $_valor;
+		}
 
 		public function execute()
 		{
-			if ($this->valor == null || $this->conta == null) return false;
+			if($this->conta == null || $this->valor == null) return false;
 
-			return $this->conta->debito($this->valor);
+			return $this->conta->retirar_credito($this->valor);
 		}
 	}
 ?>

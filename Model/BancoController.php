@@ -4,6 +4,9 @@
 	include '../Model/Debito.php';
 	include '../Model/Saldo.php';
 	include '../Model/CriarConta.php';
+	include '../Model/DarCredito.php';
+	include '../Model/RetirarCredito.php';
+	include '../Model/VerCredito.php';
 
 	class BancoController
 	{

@@ -1,5 +1,5 @@
 <?php
-	class Saldo implements ICommand
+	class VerCredito implements ICommand
 	{
 		protected $conta;
 		public function __construct($_n_conta)
@@ -15,7 +15,7 @@
 		{
 			if($this->conta == null) return false;
 
-			return $this->conta->ver_saldo();
+			return $this->conta->ver_credito();
 		}
 	}
 ?>

@@ -3,8 +3,8 @@
 
 
 
-	$conta1 = new CriarConta('cliente', '123456789', '14785-8', 150, '456-8');
-	$conta2 = new CriarConta('usuario', '555555555', '252525', 5000, '555-5');
+	$conta1 = new CriarConta('cliente', '123456789', '14785-8', 150, 124, '456-8');
+	$conta2 = new CriarConta('usuario', '555555555', '252525', 5000, 32,  '555-5');
 	$conta1->execute();
 	$conta2->execute();
 
@@ -37,6 +37,16 @@
 
 	$s = new Saldo('adfasdsa');
 	if($s->execute() == false) echo 'faiô saldo </br>';
+
+	echo '----------------------- </br>';
+	echo '----------------------- </br>';
+	echo '-Começando Crétos!! </br>';
+
+	$cred = new DarCredito('252525', 1);
+	$cred->execute();
+
+	$cred2 = new RetirarCredito('252525', 2);
+	$cred2->execute();
 
 
 ?>

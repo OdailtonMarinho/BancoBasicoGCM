@@ -25,29 +25,30 @@
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li><a href="index.html">Conta</a></li>
           <li><a href="DebitoUI.html">Débito</a></li>
-          <li class="selected"><a href="TransferenciaUI.html">Transferência</a></li>
-          <li><a href="CreditoUI.html">Crédito</a></li>
+          <li><a href="TransferenciaUI.html">Transferência</a></li>
+          <li class="selected"><a href="CreditoUI.html">Crédito</a></li>
         </ul>
       </div>
     </div>
     <div id="site_content">
       <div class="sidebar">
-        <!-- insert your sidebar items here -->
         <h3>Latest News</h3>
-        
       </div>
       <div id="content">
         <!-- insert the page content here -->
-        <h1>Transferência: </h1>
-        <form action="/BancoBasico/UserInterface/TransferenciaUI.php" method="post">
+        <h1>Alterar Crédito: </h1>
+        <form action="/BancoBasico/UserInterface/CreditoUI.php" method="post">
             <ul>
-              <li><label for="benef">NºConta Transferente:</label></li>
-            <input type="text" id="transferente" name="transferente"><br><br>
-            <li><label for="benef">NºConta Beneficiário:</label></li>
-            <input type="text" id="benef" name="benef"><br><br>
+            <li><label for="n_conta">NºConta:</label></li>
+            <input type="text" id="n_conta" name="n_conta"><br><br>
+            <li><label for="tipo_credito">Tipo da Operação: </label></li>
+            <select name="tipo_credito" id="tipo_credito">
+                <option value="dar">Dar Crédito.</option>
+                <option value="retirar">Retirar Crédito.</option>
+            </select>
             <li><label for="valor">Valor:</label></li>
             <input type="number" id="valor" name="valor" min="1" max="50000" value="10"><br><br>
-            <input type="submit" value="Transferir">
+            <input type="submit" value="Creditar">
           </ul>
         </form>
         
