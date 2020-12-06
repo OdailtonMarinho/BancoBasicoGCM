@@ -23,6 +23,7 @@
 		public function criar_conta()
 		{
 			SaveData::write_conta($this->nome, $this->cpf, $this->numero_conta, $this->saldo, $this->credito, $this->agencia);
+			#MUDANÇA;
 		}
 
 		public function ver_saldo()
